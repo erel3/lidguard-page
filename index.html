@@ -76,26 +76,20 @@
 
     /* How it works */
     .flow {
-      display: flex; align-items: stretch; justify-content: center;
-      gap: 0; max-width: 700px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; max-width: 800px; margin: 0 auto;
     }
     .flow-step {
-      flex: 1; text-align: center; padding: 32px 20px;
-      position: relative;
-    }
-    .flow-step:not(:last-child)::after {
-      content: ''; position: absolute; right: 0; top: 50%;
-      transform: translateY(-50%);
-      width: 1px; height: 60%; background: #1a1a2e;
+      flex: 1; background: #0d0d14; border: 1px solid #1a1a2e; border-radius: 12px;
+      padding: 20px 16px; text-align: center;
     }
     .flow-step .num {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 36px; height: 36px; border-radius: 50%;
-      background: #1a2a4a; color: #4a9eff;
-      font-size: 0.85em; font-weight: 700; margin-bottom: 12px;
+      font-size: 0.7em; font-weight: 600; color: #4a9eff;
+      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
     }
-    .flow-step h3 { font-size: 1.1em; color: #fff; margin-bottom: 6px; }
-    .flow-step p { font-size: 0.85em; color: #7a8ba3; }
+    .flow-step h3 { font-size: 1em; color: #fff; margin-bottom: 4px; }
+    .flow-step p { font-size: 0.8em; color: #7a8ba3; }
+    .flow-arrow { color: #2a3a5e; font-size: 1.2em; flex-shrink: 0; }
 
     /* Requirements */
     .req-list {
@@ -131,10 +125,7 @@
       .hero h1 { font-size: 2em; }
       .features { grid-template-columns: 1fr; }
       .flow { flex-direction: column; }
-      .flow-step:not(:last-child)::after {
-        width: 60%; height: 1px; right: auto; left: 20%;
-        top: auto; bottom: 0; transform: none;
-      }
+      .flow-arrow { transform: rotate(90deg); }
     }
   </style>
 </head>
@@ -154,19 +145,21 @@
     <h2>How It Works</h2>
     <div class="flow">
       <div class="flow-step">
-        <div class="num">1</div>
+        <div class="num">Step 1</div>
         <h3>Arm</h3>
         <p>Enable protection from the menu bar</p>
       </div>
+      <span class="flow-arrow">&rarr;</span>
       <div class="flow-step">
-        <div class="num">2</div>
+        <div class="num">Step 2</div>
         <h3>Detect</h3>
         <p>Lid close or power disconnect triggers theft mode</p>
       </div>
+      <span class="flow-arrow">&rarr;</span>
       <div class="flow-step">
-        <div class="num">3</div>
+        <div class="num">Step 3</div>
         <h3>Track</h3>
-        <p>Location, IP, WiFi, battery sent to your Telegram</p>
+        <p>Location, IP, WiFi, battery sent to Telegram</p>
       </div>
     </div>
   </div>
